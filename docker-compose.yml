@@ -1,3 +1,23 @@
+# FIXTURE: insecure compose file for IaC scanning.
 services:
   app:
     build: .
+    privileged: true
+    network_mode: host
+    pid: host
+    cap_add:
+      - ALL
+    security_opt:
+      - seccomp:unconfined
+      - apparmor:unconfined
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /:/host
+    environment:
+      DATABASE_PASSWORD: Pr0dDbP4ssw0rd!
+  db:
+    image: postgres:9.6
+    ports:
+      - "0.0.0.0:5432:5432"
+    environment:
+      POSTGRES_PASSWORD: postgres

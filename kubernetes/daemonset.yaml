@@ -1,0 +1,38 @@
+# FIXTURE: host-escaping DaemonSet for IaC scanning.
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: tigergate-fixture-agent
+  namespace: kube-system
+spec:
+  selector:
+    matchLabels: { app: tigergate-fixture-agent }
+  template:
+    metadata:
+      labels: { app: tigergate-fixture-agent }
+    spec:
+      hostPID: true
+      hostIPC: true
+      hostNetwork: true
+      serviceAccountName: tigergate-fixture
+      containers:
+        - name: agent
+          image: docker.io/library/swift
+          imagePullPolicy: Always
+          securityContext:
+            privileged: true
+            allowPrivilegeEscalation: true
+            readOnlyRootFilesystem: false
+            runAsUser: 0
+            capabilities:
+              add: ["SYS_ADMIN", "NET_ADMIN", "SYS_PTRACE"]
+          volumeMounts:
+            - name: docker-sock
+              mountPath: /var/run/docker.sock
+            - name: host-root
+              mountPath: /host
+      volumes:
+        - name: docker-sock
+          hostPath: { path: /var/run/docker.sock }
+        - name: host-root
+          hostPath: { path: / }

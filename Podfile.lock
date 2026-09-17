@@ -1,0 +1,68 @@
+PODS:
+  - AFNetworking (2.5.1):
+    - AFNetworking/NSURLConnection (= 2.5.1)
+    - AFNetworking/NSURLSession (= 2.5.1)
+    - AFNetworking/Reachability (= 2.5.1)
+    - AFNetworking/Security (= 2.5.1)
+    - AFNetworking/Serialization (= 2.5.1)
+  - AFNetworking/NSURLConnection (2.5.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.5.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.5.1)
+  - AFNetworking/Security (2.5.1)
+  - AFNetworking/Serialization (2.5.1)
+  - CryptoSwift (0.6.0)
+  - Firebase/Analytics (6.0.0):
+    - Firebase/Core
+  - Firebase/Core (6.0.0):
+    - Firebase/CoreOnly
+    - FirebaseAnalytics (= 6.0.0)
+  - Firebase/CoreOnly (6.0.0):
+    - FirebaseCore (= 6.0.0)
+  - FirebaseAnalytics (6.0.0)
+  - FirebaseCore (6.0.0)
+  - Realm (2.4.4):
+    - Realm/Headers (= 2.4.4)
+  - Realm/Headers (2.4.4)
+  - SDWebImage (3.7.0):
+    - SDWebImage/Core (= 3.7.0)
+  - SDWebImage/Core (3.7.0)
+  - SSZipArchive (2.1.1)
+
+DEPENDENCIES:
+  - AFNetworking (= 2.5.1)
+  - CryptoSwift (= 0.6.0)
+  - Firebase/Analytics (= 6.0.0)
+  - Realm (= 2.4.4)
+  - SDWebImage (= 3.7.0)
+  - SSZipArchive (= 2.1.1)
+
+SPEC REPOS:
+  trunk:
+    - AFNetworking
+    - CryptoSwift
+    - Firebase
+    - FirebaseAnalytics
+    - FirebaseCore
+    - Realm
+    - SDWebImage
+    - SSZipArchive
+
+SPEC CHECKSUMS:
+  AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
+  CryptoSwift: 4d3c3a8e7a7bb0d8b1f2d1f6f2c3a07bd4b2a6e1
+  Firebase: 2e5a3c4b1f0e9d8c7b6a5f4e3d2c1b0a9f8e7d6c
+  FirebaseAnalytics: 5a3b8c2d1e0f9a8b7c6d5e4f3a2b1c0d9e8f7a6b
+  FirebaseCore: 9c8b7a6f5e4d3c2b1a0f9e8d7c6b5a4f3e2d1c0b
+  Realm: 1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b
+  SDWebImage: 6d8e7f2c9b1a0d3e4f5a6b7c8d9e0f1a2b3c4d5e
+  SSZipArchive: 14401ade5f8e82aed1c3ed4bd8d2ac8ebb1d2b4a
+
+PODFILE CHECKSUM: 3f2e1d0c9b8a7f6e5d4c3b2a1f0e9d8c7b6a5f4e
+
+COCOAPODS: 1.5.3

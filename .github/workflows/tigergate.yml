@@ -1,0 +1,26 @@
+name: TigerGate Scan
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: TigerGate scan (SAST, SCA, secrets, IaC, SBOM)
+        env:
+          TIGERGATE_API_KEY: ${{ secrets.TIGERGATE_API_KEY }}
+        # This fixture repo is expected to FAIL the quality gate.
+        continue-on-error: true
+        run: |
+          docker run --rm \
+            -e TIGERGATE_API_KEY \
+            -v "$GITHUB_WORKSPACE":/src -w /src \
+            tigergate/tigergate-cli:latest \
+            scan --type all --scan-scope full --repo "$GITHUB_REPOSITORY"
