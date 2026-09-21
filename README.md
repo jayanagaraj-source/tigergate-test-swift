@@ -8,3 +8,4 @@ docker run --rm -e TIGERGATE_API_KEY -v "$PWD":/src -w /src \
   tigergate/tigergate-cli:latest scan --type all --scan-scope full
 ```
 # tigergate-test-swift
+# tigergate-test-swift
